@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Persistence\Configuration\" />
+    <ProjectReference Include="..\Veterinary.Backend.Domain\Veterinary.Backend.Domain.csproj" />
   </ItemGroup>
 
 </Project>
