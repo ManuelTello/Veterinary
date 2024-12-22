@@ -20,19 +20,19 @@ namespace Veterinary.Backend.Domain.ObjectValues
             {
                 return Result.Fail("Field required");
             }
-            else if (!ValidateAddress().IsMatch(emailValue))
+            else if (!Validate().IsMatch(emailValue))
             {
-                return Result.Fail("Invalid address");
+                return Result.Fail("Invalid email address");
             }
             else
             {
                 var email = new Email(emailValue);
-                return email;
+                return Result.Ok(email);
             }
         }
 
         [GeneratedRegex(RegexEmail)]
-        public static partial Regex ValidateAddress();
+        private static partial Regex Validate();
     }
 }
 
